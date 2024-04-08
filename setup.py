@@ -14,8 +14,8 @@ setup(
     author='Michał Bukowski',
     author_email='gigibukson@gmail.com',
     license='MIT',
-    url='https://github.com/bukson/steampy',
-    download_url='https://github.com/bukson/steampy/tarball/' + version,
+    url='https://github.com/SeanCole02/steampy',
+    download_url='https://github.com/SeanCole02/steampy/tarball/' + version,
     keywords=['steam', 'trade', ],
     classifiers=[],
     install_requires=[
