@@ -19,7 +19,6 @@ setup(
     keywords=['steam', 'trade', ],
     classifiers=[],
     install_requires=[
-        "requests",
         "beautifulsoup4",
         "rsa"
     ],
