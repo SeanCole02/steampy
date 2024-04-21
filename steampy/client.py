@@ -393,7 +393,7 @@ class SteamClient:
 
         response = self._session.post(url, data=params, headers=headers)
         print(response, response.status_code)
-        reponse = response.json()
+        response = response.json()
         if response.get('needs_mobile_confirmation'):
             response.update(self._confirm_transaction(response['tradeofferid']))
 
