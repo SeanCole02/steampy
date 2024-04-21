@@ -391,8 +391,9 @@ class SteamClient:
             'Origin': SteamUrl.COMMUNITY_URL,
         }
 
-        response = self._session.post(url, data=params, headers=headers).json()
+        response = self._session.post(url, data=params, headers=headers)
         print(response, response.status)
+        reponse = response.json()
         if response.get('needs_mobile_confirmation'):
             response.update(self._confirm_transaction(response['tradeofferid']))
 
