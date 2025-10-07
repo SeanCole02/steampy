@@ -26,7 +26,7 @@ class LoginExecutor:
         # all requests from the login page use the same "Referer" and "Origin" values
         headers = {
             "Referer": SteamUrl.COMMUNITY_URL + '/',
-            "Origin": SteamUrl.COMMUNITY_URL
+            "Origin": 'https://steamcommunity.com'
         }
         if method.upper() == 'GET':
             return self.session.get(url, params = params, headers = headers)
@@ -169,11 +169,11 @@ class LoginExecutor:
     def _finallize_login(self):
         sessionid = self.session.cookies["sessionid"]
         redir = "https://steamcommunity.com/login/home/?goto="
-
+        headers = {'origin': 'https://steamcommunity.com'}
         finallez_data = {
             'nonce': self.refresh_token,
             'sessionid': sessionid,
             'redir': redir
         }
-        response = self.session.post("https://login.steampowered.com/jwt/finalizelogin", data = finallez_data)
+        response = self.session.post("https://login.steampowered.com/jwt/finalizelogin", data = finallez_data, headers=headers)
         return response
